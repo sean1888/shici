@@ -95,7 +95,7 @@ export function ExtractorPopup() {
       {/* stats */}
       <div className="mt-5 mx-6 grid grid-cols-2 gap-3">
         <StatPill label="新词" value={SAMPLE_WORDS.length} accent="rose" />
-        <StatPill label="已过滤" value={FILTERED_COUNT} accent="amber" />
+        <StatPill label="词袋已有" value={FILTERED_COUNT} accent="amber" />
       </div>
 
       {/* word chips */}
@@ -148,7 +148,7 @@ export function ExtractorPopup() {
             </>
           ) : (
             <>
-              <Copy className="size-4" /> 复制全部
+              <Copy className="size-4" /> 复制并加入词袋
             </>
           )}
         </motion.button>
