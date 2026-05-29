@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Sparkles, Chrome, Zap, ShieldCheck } from "lucide-react";
+import { useState, useEffect } from "react";
 import { ExtractorPopup } from "./components/extractor-popup";
 import { VocabVault } from "./components/vocab-vault";
 import { ShareCard } from "./components/share-card";
@@ -7,6 +8,16 @@ import { BrandLogo } from "./components/brand-logo";
 import { HowToUse } from "./components/how-to-use";
 
 export default function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-[#fff8f3] relative overflow-hidden">
       <div className="pointer-events-none absolute top-16 -left-40 size-[520px] rounded-full bg-rose-200/50 blur-[100px] [mask-image:radial-gradient(circle,black_30%,transparent_75%)]" />
@@ -14,7 +25,11 @@ export default function App() {
       <div className="pointer-events-none absolute bottom-0 left-1/3 size-[420px] rounded-full bg-amber-100/60 blur-3xl" />
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 w-full bg-[#fff8f3]/75 backdrop-blur-xl border-b border-rose-100/60">
+      <header
+        className={`fixed top-0 left-0 right-0 z-[1000] w-full bg-[#fff8f3]/85 backdrop-blur-[10px] border-b border-rose-100/60 transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.08)]" : ""
+        }`}
+      >
         <nav className="max-w-[1240px] mx-auto px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="rounded-xl shadow-[0_8px_20px_-6px_rgba(244,63,94,0.6)] overflow-hidden">
@@ -37,7 +52,7 @@ export default function App() {
       </header>
 
       {/* MAIN */}
-      <main className="relative max-w-[1240px] mx-auto px-8 py-10">
+      <main className="relative max-w-[1240px] mx-auto px-8 py-10 pt-[calc(64px+40px)]">
         <section className="mt-6 grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
           <div>
             <motion.div
@@ -187,8 +202,8 @@ export default function App() {
 function FooterCol({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <div className="text-[11px] tracking-[0.2em] text-rose-500">{title.toUpperCase()}</div>
-      <ul className="mt-4 space-y-2.5 text-[13px]">
+      <div className="text-[13px] font-medium tracking-[0.16em] text-rose-500">{title.toUpperCase()}</div>
+      <ul className="mt-4 space-y-2.5 text-[12px]">
         {items.map((it) => (
           <li key={it} className="text-stone-600 hover:text-rose-500 cursor-pointer transition-colors">
             {it}
