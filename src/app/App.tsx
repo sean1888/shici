@@ -96,9 +96,9 @@ export default function App() {
               <button className="h-12 px-6 rounded-full bg-gradient-to-r from-rose-500 to-orange-400 text-white tracking-wide inline-flex items-center gap-2 shadow-[0_14px_32px_-10px_rgba(244,63,94,0.55)] hover:shadow-[0_18px_38px_-10px_rgba(244,63,94,0.7)] transition-shadow">
                 <Chrome className="size-4" /> 免费添加扩展
               </button>
-              <button className="h-12 px-6 rounded-full bg-white border border-stone-200 text-stone-700 tracking-wide hover:border-rose-300 hover:text-rose-500 transition-colors">
+              <a href="#features" className="h-12 px-6 rounded-full bg-white border border-stone-200 text-stone-700 tracking-wide inline-flex items-center hover:border-rose-300 hover:text-rose-500 transition-colors">
                 看看怎么用 →
-              </button>
+              </a>
             </div>
 
             <div className="mt-9 grid grid-cols-3 gap-4 max-w-[520px]">
