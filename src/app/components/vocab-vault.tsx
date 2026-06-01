@@ -16,9 +16,9 @@ export function VocabVault() {
       className="w-full max-w-[420px] rounded-[28px] bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)] border border-stone-100 overflow-hidden"
     >
       <div className="relative px-6 pt-6 pb-5 bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50">
-        <button className="absolute top-5 right-5 inline-flex items-center gap-1 text-[11.5px] text-rose-500/80 hover:text-rose-600 transition-colors">
+        <span className="absolute top-5 right-5 inline-flex items-center gap-1 text-[11.5px] text-rose-500/80">
           <ArrowLeft className="size-3" /> 返回拾起
-        </button>
+        </span>
         <div className="flex items-center gap-2 text-rose-500/80 tracking-[0.18em] text-[10px]">
           <Library className="size-3" /> MY WORD POUCH · 我的词袋
         </div>

@@ -7,6 +7,9 @@ import { ShareCard } from "./components/share-card";
 import { BrandLogo } from "./components/brand-logo";
 import { HowToUse } from "./components/how-to-use";
 
+const CHROME_STORE_URL =
+  "https://chromewebstore.google.com/detail/%E6%8B%BE%E8%AF%8D/gkcnkifhhloilihicalfpponjidijdah?utm_source=item-share-cb";
+
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -45,9 +48,14 @@ export default function App() {
             <a href="#usage" className="hover:text-rose-500 cursor-pointer">用法</a>
             <a className="hover:text-rose-500 cursor-pointer">下载</a>
           </div>
-          <button className="h-9 px-4 rounded-full bg-stone-900 text-white text-[12.5px] inline-flex items-center gap-1.5 hover:bg-rose-500 transition-colors">
+          <a
+            href={CHROME_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-9 px-4 rounded-full bg-stone-900 text-white text-[12.5px] inline-flex items-center gap-1.5 hover:bg-rose-500 transition-colors"
+          >
             <Chrome className="size-3.5" /> 添加到 Chrome
-          </button>
+          </a>
         </nav>
       </header>
 
@@ -93,9 +101,14 @@ export default function App() {
             </motion.p>
 
             <div className="mt-7 flex items-center gap-3">
-              <button className="h-12 px-6 rounded-full bg-gradient-to-r from-rose-500 to-orange-400 text-white tracking-wide inline-flex items-center gap-2 shadow-[0_14px_32px_-10px_rgba(244,63,94,0.55)] hover:shadow-[0_18px_38px_-10px_rgba(244,63,94,0.7)] transition-shadow">
+              <a
+                href={CHROME_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 px-6 rounded-full bg-gradient-to-r from-rose-500 to-orange-400 text-white tracking-wide inline-flex items-center gap-2 shadow-[0_14px_32px_-10px_rgba(244,63,94,0.55)] hover:shadow-[0_18px_38px_-10px_rgba(244,63,94,0.7)] transition-shadow"
+              >
                 <Chrome className="size-4" /> 免费添加扩展
-              </button>
+              </a>
               <a href="#features" className="h-12 px-6 rounded-full bg-white border border-stone-200 text-stone-700 tracking-wide inline-flex items-center hover:border-rose-300 hover:text-rose-500 transition-colors">
                 看看怎么用 →
               </a>
@@ -157,9 +170,14 @@ export default function App() {
                 你不是没时间背单词，<br />是没人帮你把词从文章里捡出来。
               </h3>
             </div>
-            <button className="h-12 px-6 rounded-full bg-white text-rose-500 tracking-wide inline-flex items-center gap-2 hover:bg-stone-900 hover:text-white transition-colors">
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-12 px-6 rounded-full bg-white text-rose-500 tracking-wide inline-flex items-center gap-2 hover:bg-stone-900 hover:text-white transition-colors"
+            >
               <Chrome className="size-4" /> 立即添加到 Chrome
-            </button>
+            </a>
           </div>
         </section>
 
